@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structured Webpage with JS</title>
+
+    <style>
+        /* TAG SELECTOR */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #555;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        article {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* CLASS SELECTOR */
+        .highlight {
+            color: #007BFF;
+            font-weight: bold;
+        }
+
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* ID SELECTOR */
+        #main-title {
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        #footer-text {
+            font-size: 14px;
+        }
+
+        #dynamic-text {
+            color: green;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 8px 12px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="main-title">My Website</h1>
+        <p class="highlight">Welcome to my structured webpage</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section>
+
+        <!-- A. Variables and Output -->
+        <article class="card">
+            <h2>Student Info</h2>
+            <p id="student-info"></p>
+        </article>
+
+        <!-- B. Button Function -->
+        <article class="card">
+            <h2>Button Alert</h2>
+            <button onclick="showAlert()">Click Me</button>
+        </article>
+
+        <!-- C. User Input -->
+        <article class="card">
+            <h2>User Input</h2>
+            <input type="text" id="userInput" placeholder="Type something...">
+            <p id="dynamic-text"></p>
+        </article>
+
+        <!-- D. Event Handling -->
+        <article class="card">
+            <h2>Event Handling</h2>
+            <p id="change-text">Original Content</p>
+            <button onclick="changeContent()">Change Content</button>
+        </article>
+
+    </section>
+
+    <footer>
+        <p id="footer-text">© 2026 My Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // A. Variables and Output
+        let name = "Arnie Ruiz";
+        let course = "BS Information Technology";
+
+        document.getElementById("student-info").innerHTML =
+            "Name: " + name + "<br>Course: " + course;
+
+        // B. Button Function
+        function showAlert() {
+            alert("Button was clicked!");
+        }
+
+        // C. User Input (dynamic display)
+        const inputField = document.getElementById("userInput");
+        const outputText = document.getElementById("dynamic-text");
+
+        inputField.addEventListener("input", function() {
+            outputText.textContent = "You typed: " + inputField.value;
+        });
+
+        // D. Event Handling
+        function changeContent() {
+            document.getElementById("change-text").textContent =
+                "Content has been changed!";
+        }
+    </script>
+
+</body>
+</html>
